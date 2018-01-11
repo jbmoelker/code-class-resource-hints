@@ -1,0 +1,33 @@
+{% extends "views/_base/base.html" %}
+
+{% block navigation %}
+	<nav class="cc-navigation">
+		<a href="/" class="cc-back-link">← back to overview</a>
+		{# TODO: add link to answer of exercise #}
+		<a href="/exercise-example-answer" class="cc-answer-link">see answer →</a>
+	</nav>
+{% endblock %}
+
+{% block introduction %}
+	{# TODO: add title and description of exercise #}
+	<h1>[TITLE]</h1>
+
+	<p>[DESCRIPTION]</p>
+{% endblock %}
+
+{% block html %}
+	<section class="cc-html-playground">
+		{# TODO: add HTML of exercise #}
+	</section>
+{% endblock %}
+
+{% block styles %}
+	<style type="text/css">
+	</style>
+{% endblock %}
+
+{% block scripts %}
+	<script>
+		{# TODO: add JavaScript of exercise #}
+	</script>
+{% endblock %}
