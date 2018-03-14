@@ -1,28 +1,23 @@
-'use strict';
+const express = require('express')
+const path = require('path')
+const portfinder = require('portfinder')
+const renderer = require('./lib/renderer')
 
-const express = require('express');
-const path = require('path');
-const paths = require('./lib/paths');
-const renderer = require('./lib/renderer');
+const app = express()
+const enableCaching = false // prevent caching to make perf exercise consistent
+portfinder.basePort = 3000
 
-const app = express();
-const port = 3000;
+app.set('etag', enableCaching)
+app.use('/assets/', express.static(path.join(__dirname, 'src', 'assets'), { etag: enableCaching, lastModified: enableCaching }))
 
-// prevent caching to make perf exercise consistent
-app.set('etag', false);
+app.get('/', (req, res) => res.send(renderer.render('views/index.html')))
 
-// Expose static folder on root path
-app.use('/', express.static(paths.static, { etag: false, lastModified: false }));
-
-// Default get requests
 app.get('/:page', (req, res) => {
-	const templatePath = path.join('views', `${req.params.page}/${req.params.page}.html`);
-	res.send(renderer.render(templatePath));
-});
+	const { page } = req.params
+	const filename = path.join('views', page, `${page}.html`)
+	res.send(renderer.render(filename))
+})
 
-// Redirect root to index page
-app.get('/', (req, res) => res.redirect('/index'));
-
-app.listen(port, function () {
-	console.log('Development server available on http://localhost:' + port);
-});
+portfinder.getPortPromise().then(port => {
+	app.listen(port, () => console.log(`Server ready on http://localhost:${port}`))
+})
