@@ -1,0 +1,21 @@
+{% set exercise = 3 %}
+{% extends "views/_base/exercise.html" %}
+
+{% block introduction %}
+	<h1>Exercise {{ exercise }}</h1>
+	<p><strong>Use a Resource Hint to improve time to First Contentful Paint (FCP) of the <em>next</em> page.</strong></p>
+{% endblock %}
+
+{% block head %}
+
+	{# TODO: add JResource Hint(s) here #}
+
+{% endblock %}
+
+{% block html %}
+	<div class="cc-html-playground">
+		<div class="cc-content">
+			...
+		</div>
+	</div>
+{% endblock %}

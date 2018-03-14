@@ -1,0 +1,29 @@
+{% set exercise = 1 %}
+{% extends "views/_base/exercise.html" %}
+
+{% block introduction %}
+	<h1>Exercise {{ exercise }}</h1>
+	<p><strong>Use a Resource Hint to speed up the image loading on the current page.</strong></p>
+	<p>Note: use a hard-refresh or disable cache in devtools to prevent the image from being served from cache</p>
+{% endblock %}
+
+{% block head %}
+	<script>
+		var startTime = new Date();
+		function logTime(endTime) { document.getElementById('output').value = (endTime - startTime) + ' ms' }
+	</script>
+
+	{# TODO: add JResource Hint(s) here #}
+
+{% endblock %}
+
+{% block html %}
+	<div class="cc-html-playground">
+		<div class="cc-content">
+			<label>load time <input id="output" readonly></label>
+			<br><br>
+			<img alt="" src="https://www.datocms-assets.com/2850/1516801769-ap_100806131932-e.jpeg"
+				onload="logTime(new Date())">
+		</div>
+	</div>
+{% endblock %}

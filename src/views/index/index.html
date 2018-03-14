@@ -1,35 +1,41 @@
 {% extends "views/_base/base.html" %}
 
 {% block introduction %}
-	{# TODO: add title and description of code class #}
-	<h1>[TITLE]</h1>
-
-	<p>[DESCRIPTION]</p>
+	<h1>Code Class Resource Hints</h1>
+	<p>Resource hints are a way to tell the browser which requests to make before it figured it out itself. They aim to speed up the loading of critical resources.</p>
+	<p>Let's figure out how to use them with a few exercises:</p>
 {% endblock %}
 
-{% block exercises %}
-	<h2>Exercises</h2>
+{% block html %}
+<div class="cc-content">
+    <section class="cc-content-section">
+		<h2>Exercises</h2>
+		<ol>
+			<li><a href="/exercise-1">Exercise 1</a></li>
+			<li><a href="/exercise-2">Exercise 2</a></li>
+			<li><a href="/exercise-3">Exercise 3</a></li>
+		</ol>
+	</section>
 
-	<ul>
-		{# TODO: create links to all exercises #}
-		<li><a href="/exercise-example">Exercise example</a></li>
-	</ul>
-{% endblock %}
+    <section class="cc-content-section">
+        <div class="cc-content-presentation">
+			<h2>Presentation</h2>
+			<div class="cc-presentation">
+				<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vS__qSxEY84KTkK3LbRMaF9dA2ab1aXQNUvZ59_IkPukaC2F7xQuQgr2JxRDuhPrLLFTbRB-mA4xePv/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+			</div>
+        </div>
+    </section>
 
-{% block presentation %}
-	<h2>Presentation</h2>
-	
-	<div class="cc-presentation">
-		{# TODO: add url of Google Slides presentation #}
-		<iframe src="[URL]" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-	</div>
-{% endblock %}
-
-{% block stream %}
-	<h2>Stream</h2>
-
-	<div class="cc-stream">
-		{# TODO: add url of YouTube stream #}
-		<iframe width="560" height="315" src="[URL]" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-	</div>
+    <section class="cc-content-section">
+        <div class="cc-content-stream">
+			<h2>Stream</h2>
+			<div class="cc-stream">
+				{# TODO: add url of YouTube stream #}
+				{#
+				<iframe width="560" height="315" src="[URL]" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				#}
+			</div>
+        </div>
+    </section>
+</div>
 {% endblock %}

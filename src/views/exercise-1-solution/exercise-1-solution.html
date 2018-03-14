@@ -1,0 +1,14 @@
+{% set exercise = 1 %}
+{% set solution = true %}
+{% extends "views/exercise-" + exercise + "/exercise-" + exercise + ".html" %}
+
+{% block introduction %}
+    {{ super() }}
+	<p><strong>Solution: ...</strong></p>
+{% endblock %}
+
+{% block head %}
+    {{ super() }}
+	<link rel="dns-prefetch" href="https://www.datocms-assets.com">
+	<link rel="preload" as="image" href="https://www.datocms-assets.com/2850/1516801769-ap_100806131932-e.jpeg">
+{% endblock %}

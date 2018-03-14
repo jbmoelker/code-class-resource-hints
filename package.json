@@ -1,7 +1,7 @@
 {
-  "name": "code-class-template",
+  "name": "code-class-resource-hints",
   "version": "1.0.0",
-  "description": "Templates for Code Classes at De Voorhoede",
+  "description": "Code Classes Resource HInts",
   "main": "index.js",
   "scripts": {
     "prebuild": "rimraf static/ && mkdirp static/",
@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:voorhoede/code-class-template.git"
+    "url": "git@github.com:voorhoede/code-class-resource-hints.git"
   },
   "author": "De Voorhoede",
   "license": "UNLICENSED",

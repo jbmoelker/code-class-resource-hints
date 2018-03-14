@@ -8,8 +8,11 @@ const renderer = require('./lib/renderer');
 const app = express();
 const port = 3000;
 
+// prevent caching to make perf exercise consistent
+app.set('etag', false);
+
 // Expose static folder on root path
-app.use('/', express.static(paths.static));
+app.use('/', express.static(paths.static, { etag: false, lastModified: false }));
 
 // Default get requests
 app.get('/:page', (req, res) => {
