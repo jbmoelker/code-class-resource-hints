@@ -17,6 +17,9 @@ This wil build the project, start the server and start the watcher. The project 
 
 ## Exercises
 
+The code of the exercises can be found in [src/views/exercises/exercise-*.html](src/views/exercises/).
+Each exercise has a `exercise-*-solution.html` next to it.
+
 ## Slides
 
 [Code Class Resource Hints presentation](https://docs.google.com/presentation/d/e/2PACX-1vS__qSxEY84KTkK3LbRMaF9dA2ab1aXQNUvZ59_IkPukaC2F7xQuQgr2JxRDuhPrLLFTbRB-mA4xePv/pub?start=false&loop=false&delayms=3000)
