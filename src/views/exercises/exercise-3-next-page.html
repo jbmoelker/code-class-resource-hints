@@ -1,0 +1,33 @@
+{% set exercise = 3 %}
+{% extends "views/_base/exercise.html" %}
+
+{% block head %}
+	<script>var startTime = new Date();</script>
+{% endblock %}
+
+{% block html %}
+	<div class="cc-html-playground">
+		<div class="cc-content">
+			<div id="app">SPA loading ...</div>
+		</div>
+	</div>
+
+	<script src="/vue/vue.js"></script>
+	<script>
+		new Vue({
+			el: '#app',
+			template: '<label>load time<input readonly v-model="output"></label>',
+			created: function () {
+				var endTime = new Date()
+				this.output = (endTime - startTime) + ' ms'
+			}
+		})
+	</script>
+{% endblock %}
+
+{% block navigation %}
+	<nav class="cc-navigation">
+		<a href="/exercise-{{ exercise }}" class="cc-back-link">← back to exercise {{ exercise }}</a>
+		<a href="/exercise-{{ exercise }}-solution" class="cc-answer-link">see answer →</a>
+	</nav>
+{% endblock %}

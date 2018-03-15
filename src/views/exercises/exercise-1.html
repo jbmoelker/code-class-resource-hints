@@ -4,7 +4,7 @@
 {% block introduction %}
 	<h1>Exercise {{ exercise }}</h1>
 	<p><strong>Use a Resource Hint to speed up the image loading on the current page.</strong></p>
-	<p>Note: use a hard-refresh or disable cache in devtools to prevent the image from being served from cache</p>
+	<p>Note: use a hard-refresh to avoid cached response.</p>
 {% endblock %}
 
 {% block head %}
@@ -13,7 +13,7 @@
 		function logTime(endTime) { document.getElementById('output').value = (endTime - startTime) + ' ms' }
 	</script>
 
-	{# TODO: add JResource Hint(s) here #}
+	{# TODO: add Resource Hint(s) here #}
 
 {% endblock %}
 
@@ -22,7 +22,7 @@
 		<div class="cc-content">
 			<label>load time <input id="output" readonly></label>
 			<br><br>
-			<img alt="" src="https://www.datocms-assets.com/2850/1516801769-ap_100806131932-e.jpeg"
+			<img alt="" src="https://www.datocms-assets.com/2850/1516801769-ap_100806131932-e.jpeg?{{ timestamp }}"
 				onload="logTime(new Date())">
 		</div>
 	</div>

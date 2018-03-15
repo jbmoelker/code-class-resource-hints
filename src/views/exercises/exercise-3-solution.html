@@ -4,9 +4,14 @@
 
 {% block introduction %}
     {{ super() }}
-	<p><strong>Solution: ...</strong></p>
+	<p><strong>Solution:
+		Use <code>&lt;link rel="prerender" href="/exercise-3-next-page"&gt;</code>
+		or <code>&lt;link rel="prefetch" as="script" href="/vue/vue.js"&gt;</code>.
+	</strong></p>
 {% endblock %}
 
 {% block head %}
     {{ super() }}
+	{# <link rel="prefetch" as="script" href="/vue/vue.js"> #}
+	<link rel="prerender" href="/exercise-3-next-page">
 {% endblock %}
