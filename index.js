@@ -4,7 +4,7 @@ const portfinder = require('portfinder')
 const renderer = require('./lib/renderer')
 
 const app = express()
-const enableCaching = false // prevent caching to make perf exercise consistent
+const enableCaching = false // Prevent caching to make perf exercise consistent. This is not a good practice for real projects.
 portfinder.basePort = 3000
 
 app.set('etag', enableCaching)

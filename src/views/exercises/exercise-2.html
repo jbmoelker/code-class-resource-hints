@@ -7,6 +7,15 @@
 {% endblock %}
 
 {% block head %}
+	<script>
+		if ('fonts' in document && 'ready' in document.fonts) {
+			var startTime = new Date();
+			function logTime(endTime) { document.getElementById('output').value = (endTime - startTime) + ' ms' }
+			document.fonts.ready.then(function() { logTime(new Date()) })
+		}
+	</script>
+	<link rel="stylesheet" href="/assets/fonts/index.css">
+	<style>.custom-font { font-family: Raleway; font-weight: 700; font-size: 4em; }</style>
 
 	{# TODO: add Resource Hint(s) here #}
 
@@ -15,7 +24,9 @@
 {% block html %}
 	<div class="cc-html-playground">
 		<div class="cc-content">
-			...
+			<label>load time <input id="output" readonly></label>
+			<br><br>
+			<span class="custom-font">Content with custom font</span>
 		</div>
 	</div>
 {% endblock %}
